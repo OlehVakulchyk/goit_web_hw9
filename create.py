@@ -36,7 +36,7 @@ def load_json_quote(file):
                     content=qt['quote']
                 ).save()
 if __name__ == '__main__':
-    load_json_author('authors_scrapy.json')
-    load_json_quote('quotes_scrapy.json')
+    load_json_author('authors.json')
+    load_json_quote('quotes.json')
 
     disconnect()
