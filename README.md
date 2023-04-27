@@ -7,3 +7,6 @@ For MongoDB
 - connect with redis( docker container 7f8bf6a504ecd8ffba093e2f929c1716a006be897dc467c8ca2a26a987fbb035)
 - create.py
 - my_select.py
+
+to receive files authors_scrapy.json, quotes_scrapy.json
+- main_scrapy.py

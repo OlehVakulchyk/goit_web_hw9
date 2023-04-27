@@ -14,6 +14,7 @@ lxml = "^4.9.2"
 mongoengine = "^0.27.0"
 redis = "^4.5.4"
 redis-lru = "^0.1.2"
+scrapy = "^2.8.0"
 
 
 [build-system]

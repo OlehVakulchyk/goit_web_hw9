@@ -21,15 +21,22 @@ def load_json_quote(file):
     with open(file, 'r', encoding='utf-8') as f:
         quotes = json.load(f)        
         for qt in quotes:
-            quote_author = Author.objects(fullname=qt["author"])    
-            quote = Quote(
-                author=quote_author[0],
-                tags=qt['tags'],
-                content=qt['quote']
-            ).save()
-
+            quote_author = Author.objects(fullname=qt["author"])
+            if quote_author:    
+                quote = Quote(
+                    author=quote_author[0],
+                    tags=qt['tags'],
+                    content=qt['quote']
+                ).save()
+            else:
+                print(f'author "{qt["author"]}" does not have in the database "Author"')
+                quote = Quote(
+                    author=qt["author"],
+                    tags=qt['tags'],
+                    content=qt['quote']
+                ).save()
 if __name__ == '__main__':
-    load_json_author('authors.json')
-    load_json_quote('quotes.json')
+    load_json_author('authors_scrapy.json')
+    load_json_quote('quotes_scrapy.json')
 
     disconnect()
